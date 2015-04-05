@@ -2,3 +2,4 @@
 MongoProc
 *__MACOSX*
 *node_modules*
+.idea

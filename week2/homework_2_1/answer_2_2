@@ -1,0 +1,22 @@
+> db.data.distinct('State')
+[ "Vermont", "California", "Florida", "New Mexico" ]
+> db.data.find({ State: "Vermont"}).sort({ Temperature : -1}).limit(1)
+{ "_id" : ObjectId("551a4d394376021f267ce610"), "Day" : 23, "Time" : 1654, "State" : "Vermont", "Airport" : "BTV", "Temperature" : 57, "Humidity" : 78, "Wind Speed" : 13, "Wind Direction" : 170, "Station Pressure" : 29.1, "Sea Le
+vel Pressure" : 982 }
+> db.data.update({ "_id" : ObjectId("551a4d394376021f267ce610") }, { $set : { "month_high" : true }});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.data.find({ State: "California"}).sort({ Temperature : -1}).limit(1)
+{ "_id" : ObjectId("551a4d394376021f267ce7d3"), "Day" : 11, "Time" : 1150, "State" : "California", "Airport" : "LAX", "Temperature" : 81, "Humidity" : 32, "Wind Speed" : 5, "Wind Direction" : 50, "Station Pressure" : 29.63, "Sea
+Level Pressure" : 151 }
+> db.data.update({ "_id" : ObjectId("551a4d394376021f267ce7d3") }, { $set : { "month_high" : true }});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.data.find({ State: "Florida"}).sort({ Temperature : -1}).limit(1)
+{ "_id" : ObjectId("551a4d394376021f267cea70"), "Day" : 8, "Time" : 1453, "State" : "Florida", "Airport" : "ORL", "Temperature" : 83, "Humidity" : 55, "Wind Speed" : 5, "Wind Direction" : 190, "Station Pressure" : 29.97, "Sea Lev
+el Pressure" : 195 }
+> db.data.update({ "_id" : ObjectId("551a4d394376021f267cea70") }, { $set : { "month_high" : true }});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.data.find({ State: "New Mexico"}).sort({ Temperature : -1}).limit(1)
+{ "_id" : ObjectId("551a4d394376021f267ced99"), "Day" : 11, "Time" : 1453, "State" : "New Mexico", "Airport" : "SAF", "Temperature" : 57, "Humidity" : 32, "Wind Speed" : 11, "Wind Direction" : 340, "Station Pressure" : 23.87, "Se
+a Level Pressure" : 174 }
+> db.data.update({ "_id" : ObjectId("551a4d394376021f267ced99") }, { $set : { "month_high" : true }});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
